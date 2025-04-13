@@ -8,7 +8,6 @@ export async function authentication(request: FastifyRequest) {
   const token = request.headers.authorization?.split('Bearer ').at(1)
 
   if (!token) {
-    console.log('TOKEN', token)
     throw new UnauthorizedError()
   }
 

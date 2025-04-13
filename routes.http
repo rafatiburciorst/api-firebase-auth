@@ -1,0 +1,38 @@
+@baseUrl = http://0.0.0.0:3333/api/v1
+@token = {{login.response.body.access_token}}
+
+# @name login
+POST {{baseUrl}}/sigin
+Content-Type: application/json
+
+{
+  "email": "rafael.tiburcio@arthwind.com.br",
+  "password": "abc123"
+}
+
+###
+
+# @name create-company
+POST {{baseUrl}}/save-companies
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "logo": "teste2",
+  "cpfCnpj": "33333333",
+  "razaoSocial": "teste 2",
+  "nomeFanasia": "fantasia 1",
+  "telefone": "33333333",
+  "horarioDeFuncionamento": "498744",
+  "endereco": "fsfsdfdsfd",
+  "localizacao": "fdsfsfdsf",
+  "taxaDeEntrega": "sdfsfd"
+}
+
+###
+
+# @name get-companies
+GET {{baseUrl}}/get-companies
+Content-Type: application/json
+Authorization: Bearer {{token}}
+

@@ -2,8 +2,9 @@ import type { FastifyInstance } from 'fastify'
 import type { ZodTypeProvider } from 'fastify-type-provider-zod'
 import { getFirestore } from 'firebase-admin/firestore'
 import { z } from 'zod'
-import { authentication } from '../middleware/auth.js'
+
 import { getAuth } from 'firebase-admin/auth'
+import { authentication } from '@/http/middleware/authentication.js'
 
 export async function updateUser(app: FastifyInstance) {
   app

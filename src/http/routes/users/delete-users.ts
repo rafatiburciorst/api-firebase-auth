@@ -1,7 +1,7 @@
 import type { FastifyInstance } from 'fastify'
 import type { ZodTypeProvider } from 'fastify-type-provider-zod'
 import { getFirestore } from 'firebase-admin/firestore'
-import { authentication } from '../middleware/auth.js'
+import { authentication } from '../../middleware/authentication.js'
 import { getAuth } from 'firebase-admin/auth'
 
 export async function deleteUser(app: FastifyInstance) {
